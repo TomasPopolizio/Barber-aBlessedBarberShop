@@ -215,6 +215,7 @@ function update() {
   $("#tDay").textContent = date ? `${DAY_SHORT[date.getDay()]} ${date.getDate()} ${MONTHS[date.getMonth()].slice(0, 3)}` : "—";
   $("#tTime").textContent = time ? `${time} hs` : "—";
   $("#tDur").textContent = service ? `${service.minutes} min` : "—";
+  document.querySelectorAll(".ticket-rows dd").forEach((dd) => dd.classList.toggle("empty", dd.textContent === "—"));
   $("#tPrice").textContent = money(service ? service.price : 0);
 
   const ready = done.every(Boolean);
