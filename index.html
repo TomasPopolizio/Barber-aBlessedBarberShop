@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blessed Barber Shop — Reservá tu turno</title>
+  <meta name="description" content="Blessed Barber Shop · Lavalle 575, CABA. Reservá tu turno online en menos de un minuto." />
+  <meta name="theme-color" content="#0c0c0c" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Panal de luces de fondo (guiño al techo hexagonal del local) -->
+  <svg class="honeycomb" aria-hidden="true"><defs>
+    <pattern id="hex" width="56" height="97" patternUnits="userSpaceOnUse" patternTransform="scale(1.1)">
+      <path d="M28 0 L56 16 L56 48.5 L28 64.5 L0 48.5 L0 16 Z M28 64.5 L28 97" fill="none" stroke="currentColor" stroke-width="1"/>
+    </pattern></defs><rect width="100%" height="100%" fill="url(#hex)"/></svg>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Blessed Barber Shop, inicio">
+      <span class="hex-mark" aria-hidden="true"></span>
+      <span>BLESSED<small>barber shop</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#turnos">Turnos</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#local">El local</a>
+    </nav>
+    <a class="btn btn-light" href="#turnos">Reservar</a>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" id="statusDot"></span><span id="statusText">Lavalle 575 · CABA</span></p>
+        <h1>Cortes a la<br /><em>medida</em> de vos.</h1>
+        <p class="lead">Adaptamos cada corte a la forma de tu cabeza. Sin esperas, sin vueltas: elegís servicio, día y hora, y listo.</p>
+        <div class="hero-actions">
+          <a class="btn btn-light btn-lg" href="#turnos">Reservar turno <span aria-hidden="true">→</span></a>
+          <a class="rating" href="#opiniones">
+            <strong>5.0</strong>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span class="muted">14 reseñas en Google</span>
+          </a>
+        </div>
+      </div>
+      <figure class="hero-media">
+        <img src="assets/local.jpg" alt="Interior de Blessed Barber Shop: techo con luces hexagonales, piso de madera, sillones chesterfield negros" width="408" height="544" />
+        <figcaption><span>N°575</span><span>Est. Buenos Aires</span></figcaption>
+      </figure>
+      <div class="hero-word" aria-hidden="true">BLESSED</div>
+    </section>
+
+    <!-- RESERVAS -->
+    <section class="booking" id="turnos" aria-labelledby="bookingTitle">
+      <div class="section-head">
+        <span class="index">01</span>
+        <h2 id="bookingTitle">Reservá tu <em>turno</em></h2>
+        <p class="muted">Cuatro pasos. Menos de un minuto.</p>
+      </div>
+
+      <div class="booking-grid">
+        <form class="steps" id="bookingForm" novalidate>
+          <!-- Paso 1 -->
+          <fieldset class="step" data-step="1">
+            <legend><span class="step-n">1</span>Servicio</legend>
+            <div class="services" id="services" role="radiogroup" aria-label="Servicios"></div>
+          </fieldset>
+
+          <!-- Paso 2 -->
+          <fieldset class="step" data-step="2">
+            <legend><span class="step-n">2</span>Día <span class="muted small" id="monthLabel"></span></legend>
+            <div class="days-wrap">
+              <button type="button" class="scroll-btn" data-dir="-1" aria-label="Días anteriores">←</button>
+              <div class="days" id="days" role="radiogroup" aria-label="Días disponibles"></div>
+              <button type="button" class="scroll-btn" data-dir="1" aria-label="Más días">→</button>
+            </div>
+          </fieldset>
+
+          <!-- Paso 3 -->
+          <fieldset class="step" data-step="3">
+            <legend><span class="step-n">3</span>Horario</legend>
+            <div class="slots" id="slots" role="radiogroup" aria-label="Horarios disponibles">
+              <p class="muted small">Elegí un día para ver los horarios.</p>
+            </div>
+          </fieldset>
+
+          <!-- Paso 4 -->
+          <fieldset class="step" data-step="4">
+            <legend><span class="step-n">4</span>Tus datos</legend>
+            <div class="fields">
+              <label class="field">
+                <span>Nombre</span>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Cómo te llamás" required />
+              </label>
+              <label class="field">
+                <span>WhatsApp</span>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="11 2345 6789" inputmode="tel" required />
+              </label>
+              <label class="field field-wide">
+                <span>Nota <em class="muted">(opcional)</em></span>
+                <input id="note" name="note" type="text" placeholder="Ej: fade bajo, dejar largo arriba" maxlength="140" />
+              </label>
+            </div>
+          </fieldset>
+        </form>
+
+        <!-- Ticket resumen -->
+        <aside class="ticket" aria-live="polite">
+          <div class="ticket-top">
+            <span class="hex-mark" aria-hidden="true"></span>
+            <span class="ticket-label">Tu turno</span>
+          </div>
+          <dl class="ticket-rows">
+            <div><dt>Servicio</dt><dd id="tService">—</dd></div>
+            <div><dt>Día</dt><dd id="tDay">—</dd></div>
+            <div><dt>Hora</dt><dd id="tTime">—</dd></div>
+            <div><dt>Duración</dt><dd id="tDur">—</dd></div>
+          </dl>
+          <div class="ticket-cut" aria-hidden="true"></div>
+          <div class="ticket-total">
+            <span>Total</span>
+            <strong id="tPrice">$0</strong>
+          </div>
+          <button class="btn btn-light btn-block" id="confirmBtn" type="submit" form="bookingForm" disabled>Confirmar turno</button>
+          <p class="hint" id="hint">Elegí un servicio para empezar.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- OPINIONES -->
+    <section class="reviews" id="opiniones" aria-labelledby="reviewsTitle">
+      <div class="section-head">
+        <span class="index">02</span>
+        <h2 id="reviewsTitle">Lo que <em>dicen</em></h2>
+        <p class="muted">5.0 ★ · 14 reseñas en Google Maps</p>
+      </div>
+      <div class="marquee" aria-label="Reseñas de clientes">
+        <div class="marquee-track" id="marquee"></div>
+      </div>
+    </section>
+
+    <!-- LOCAL -->
+    <section class="info" id="local" aria-labelledby="infoTitle">
+      <div class="section-head">
+        <span class="index">03</span>
+        <h2 id="infoTitle">El <em>local</em></h2>
+      </div>
+      <div class="info-grid">
+        <a class="info-card" href="https://maps.google.com/?q=Blessed+Barber+Shop+Lavalle+575+Buenos+Aires" target="_blank" rel="noopener">
+          <span class="info-k">Dirección</span>
+          <span class="info-v">Lavalle 575</span>
+          <span class="muted">C1047 · Microcentro, CABA</span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <div class="info-card">
+          <span class="info-k">Horarios</span>
+          <ul class="hours" id="hours"></ul>
+        </div>
+        <a class="info-card" href="tel:+541123563376">
+          <span class="info-k">Teléfono</span>
+          <span class="info-v">011 2356-3376</span>
+          <span class="muted">Llamadas y WhatsApp</span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="hero-word small-word" aria-hidden="true">BLESSED</span>
+    <div class="footer-row">
+      <span>© <span id="year"></span> Blessed Barber Shop</span>
+      <a href="#top">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <!-- Confirmación -->
+  <dialog class="modal" id="modal" aria-labelledby="modalTitle">
+    <div class="modal-inner">
+      <span class="hex-mark big" aria-hidden="true"></span>
+      <h3 id="modalTitle">¡Turno <em>reservado</em>!</h3>
+      <p class="muted" id="modalText"></p>
+      <div class="modal-code"><span class="muted small">Código</span><strong id="modalCode"></strong></div>
+      <div class="modal-actions">
+        <a class="btn btn-light btn-block" id="waBtn" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+        <button class="btn btn-ghost btn-block" id="icsBtn" type="button">Agregar al calendario</button>
+        <button class="link-btn" id="closeModal" type="button">Cerrar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
