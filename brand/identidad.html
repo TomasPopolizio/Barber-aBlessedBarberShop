@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Blessed Barber Shop — Identidad de marca</title>
+<meta name="viewport" content="width=1600" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --negro: #0c0c0c;
+    --grafito: #1f1f1f;
+    --luz: #fbf8f1;
+    --madera: #c07a43;
+    --humo: #8d8a85;
+    --line: rgba(255,255,255,.1);
+    --serif: "Instrument Serif", Georgia, serif;
+    --sans: "Space Grotesk", system-ui, sans-serif;
+  }
+  @page { size: 1600px 900px; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #050505; }
+  body { font-family: var(--sans); color: var(--luz); -webkit-font-smoothing: antialiased; }
+  em { font-family: var(--serif); font-style: italic; font-weight: 400; }
+
+  .slide {
+    position: relative;
+    width: 1600px; height: 900px;
+    padding: 72px 88px;
+    overflow: hidden;
+    background: var(--negro);
+    margin: 0 auto 24px;
+    page-break-after: always; break-after: page;
+  }
+  @media print { .slide { margin: 0; } }
+  .slide.light { background: var(--luz); color: var(--negro); }
+  .slide.wood { background: var(--madera); color: var(--negro); }
+
+  .meta {
+    position: absolute; left: 88px; right: 88px; top: 40px;
+    display: flex; justify-content: space-between;
+    font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--humo);
+  }
+  .light .meta { color: rgba(12,12,12,.45); }
+  .meta b { color: var(--luz); font-weight: 600; }
+  .light .meta b { color: var(--negro); }
+
+  .honey { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+  h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: -.035em; line-height: .95; }
+  h2 { font-size: 84px; }
+  h2 em, h1 em { color: var(--madera); letter-spacing: -.01em; }
+  .light h2 em { color: var(--madera); }
+  p { margin: 0; }
+  .lead { font-size: 24px; line-height: 1.45; color: #c9c5be; max-width: 34ch; }
+  .light .lead { color: #4a4743; }
+  .small { font-size: 15px; color: var(--humo); line-height: 1.5; }
+  .light .small { color: #6d6a65; }
+  .label { font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: var(--humo); }
+  .light .label { color: #7a766f; }
+
+  /* Logo */
+  .mono { display: block; }
+  .mono .hex { fill: none; stroke: currentColor; }
+  .mono .b { fill: none; stroke: currentColor; stroke-linejoin: miter; stroke-linecap: square; }
+  .glow { filter: drop-shadow(0 0 18px rgba(251,248,241,.55)) drop-shadow(0 0 2px #fff); }
+  .word { font-weight: 700; letter-spacing: .32em; line-height: 1; }
+  .sub { font-weight: 500; letter-spacing: .5em; text-transform: uppercase; line-height: 1; }
+  .lockup { display: flex; align-items: center; }
+  .lockup .txt { display: grid; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+  .card { border: 1px solid var(--line); border-radius: 22px; }
+  .light .card { border-color: rgba(12,12,12,.12); }
+  .tag { display: inline-block; padding: 6px 14px; border-radius: 99px; border: 1px solid var(--line); font-size: 14px; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="m" viewBox="0 0 100 115.47">
+      <polygon points="50,4 96.5,30.9 96.5,84.6 50,111.5 3.5,84.6 3.5,30.9" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="miter" />
+      <path fill="none" stroke="currentColor" stroke-linejoin="miter" stroke-linecap="square" d="M37 33 V83 M37 33 H53 L60 45.5 L53 58 H37 M37 58 H55.5 L63 70.5 L55.5 83 H37" stroke-width="6" />
+    </symbol>
+    <pattern id="hp" width="56" height="97" patternUnits="userSpaceOnUse">
+      <path d="M28 0 L56 16 L56 48.5 L28 64.5 L0 48.5 L0 16 Z M28 64.5 L28 97" fill="none" stroke="#fbf8f1" stroke-width="1.2"/>
+    </pattern>
+    <pattern id="hpd" width="56" height="97" patternUnits="userSpaceOnUse">
+      <path d="M28 0 L56 16 L56 48.5 L28 64.5 L0 48.5 L0 16 Z M28 64.5 L28 97" fill="none" stroke="#0c0c0c" stroke-width="1.2"/>
+    </pattern>
+    <pattern id="hpbig" width="112" height="194" patternUnits="userSpaceOnUse">
+      <path d="M56 0 L112 32 L112 97 L56 129 L0 97 L0 32 Z M56 129 L56 194" fill="none" stroke="#fbf8f1" stroke-width="2"/>
+    </pattern>
+  </defs>
+</svg>
+
+<!-- 01 PORTADA -->
+<section class="slide" style="display:grid;place-items:center;text-align:center">
+  <svg class="honey" data-p="l" style="opacity:.14;mask-image:radial-gradient(circle at 50% 45%,#000 0%,transparent 45%);-webkit-mask-image:radial-gradient(circle at 50% 45%,#000 0%,transparent 45%)"><rect width="100%" height="100%" fill="url(#hpbig)"/></svg>
+  <div style="position:relative;display:grid;justify-items:center;gap:40px">
+    <svg class="mono glow" width="150" height="173" style="color:var(--luz)"><use href="#m"/></svg>
+    <div>
+      <div class="word" style="font-size:88px;margin-right:-.32em">BLESSED</div>
+      <div class="sub" style="font-size:17px;color:var(--humo);margin-top:22px;margin-right:-.5em">Barber Shop · Buenos Aires</div>
+    </div>
+  </div>
+  <div class="meta" style="top:auto;bottom:44px"><span>Propuesta de identidad de marca</span><span>Lavalle 575 · CABA</span><span>2026</span></div>
+</section>
+
+<!-- 02 PUNTO DE PARTIDA -->
+<section class="slide">
+  <div class="meta"><span><b>01</b> — Punto de partida</span><span>Blessed Barber Shop · Identidad</span></div>
+  <div style="display:grid;grid-template-columns:520px 1fr;gap:88px;height:100%;align-items:center;padding-top:20px">
+    <div style="height:700px;border-radius:260px 260px 24px 24px;overflow:hidden;border:1px solid var(--line)">
+      <img src="img/local.jpg" style="width:100%;height:100%;object-fit:cover" alt="" />
+    </div>
+    <div style="display:grid;gap:44px">
+      <h2>El local ya tiene<br />una <em>identidad.</em></h2>
+      <p class="lead">Un panal de luz sobre madera y cuero negro. No hay que inventar nada: la marca toma lo que el cliente ya siente al entrar y lo lleva a todo lo que toca — la web, las redes, la tarjeta, la vidriera.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+        <div class="card" style="padding:26px"><div class="label" style="color:var(--luz)">Luz</div><p class="small" style="margin-top:10px">Precisión. Líneas limpias, cortes prolijos, nada librado al azar.</p></div>
+        <div class="card" style="padding:26px"><div class="label" style="color:var(--luz)">Panal</div><p class="small" style="margin-top:10px">Orden y comunidad. Cada cliente encaja; el hexágono es la firma.</p></div>
+        <div class="card" style="padding:26px"><div class="label" style="color:var(--madera)">Oficio</div><p class="small" style="margin-top:10px">Madera, cuero, mano. Lo artesanal detrás de cada corte.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 ESENCIA -->
+<section class="slide light">
+  <svg class="honey" data-p="d" style="opacity:.07;mask-image:linear-gradient(90deg,transparent 40%,#000);-webkit-mask-image:linear-gradient(90deg,transparent 40%,#000)"><rect width="100%" height="100%" fill="url(#hpd)"/></svg>
+  <div class="meta"><span><b>02</b> — Esencia</span><span>Blessed Barber Shop · Identidad</span></div>
+  <div style="position:relative;display:grid;align-content:center;height:100%;gap:56px">
+    <div class="label">La idea en una frase</div>
+    <h1 style="font-size:190px;letter-spacing:-.05em">Salí <em>bendecido.</em></h1>
+    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:end">
+      <p class="lead" style="max-width:40ch">“Blessed” es bendecido. La promesa es simple: entrás como venís y salís renovado — con un corte pensado para tu cabeza, en un lugar donde te tratan como de la casa.</p>
+      <div>
+        <div class="label" style="margin-bottom:16px">Personalidad</div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <span class="tag" style="border-color:rgba(12,12,12,.2);font-size:18px">Prolija</span>
+          <span class="tag" style="border-color:rgba(12,12,12,.2);font-size:18px">Cercana</span>
+          <span class="tag" style="border-color:rgba(12,12,12,.2);font-size:18px">Segura</span>
+          <span class="tag" style="border-color:rgba(12,12,12,.2);font-size:18px">Porteña</span>
+          <span class="tag" style="background:var(--negro);color:var(--luz);font-size:18px">Moderna sin ser fría</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 LOGO -->
+<section class="slide">
+  <div class="meta"><span><b>03</b> — Logo</span><span>Blessed Barber Shop · Identidad</span></div>
+  <div style="display:grid;grid-template-columns:1fr 520px;gap:80px;height:100%;align-items:center">
+    <div class="card" style="height:640px;display:grid;place-items:center;background:radial-gradient(circle at 50% 50%,#191919,#0c0c0c 70%)">
+      <div class="lockup" style="gap:36px">
+        <svg class="mono glow" width="128" height="148" style="color:var(--luz)"><use href="#m"/></svg>
+        <div class="txt" style="gap:18px">
+          <span class="word" style="font-size:78px">BLESSED</span>
+          <span class="sub" style="font-size:16px;color:var(--humo)">Barber Shop</span>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;gap:36px">
+      <h2 style="font-size:64px">Una B hecha<br />de <em>luz.</em></h2>
+      <p class="lead" style="font-size:20px">El monograma toma el hexágono del techo y construye la B con sus mismos ángulos de 60°. Funciona como una pieza de neón: líneas de un solo grosor, sin rellenos.</p>
+      <div style="display:flex;gap:28px;align-items:center">
+        <svg viewBox="0 0 100 115.47" width="150" height="173" style="color:var(--luz)">
+          <g stroke="rgba(192,122,67,.7)" stroke-width=".5" fill="none" stroke-dasharray="2 2">
+            <line x1="37" y1="0" x2="37" y2="115.47"/><line x1="0" y1="33" x2="100" y2="33"/><line x1="0" y1="58" x2="100" y2="58"/><line x1="0" y1="83" x2="100" y2="83"/>
+            <line x1="53" y1="33" x2="67" y2="57.2"/><line x1="55.5" y1="58" x2="69.5" y2="82.2"/>
+          </g>
+          <use href="#m"/>
+        </svg>
+        <div class="small" style="display:grid;gap:10px">
+          <span>— Hexágono = el panal del local</span>
+          <span>— Diagonales a 60°, iguales al hexágono</span>
+          <span>— Trazo único, como un tubo LED</span>
+          <span>— Wordmark espaciado: calma y lujo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 VERSIONES -->
+<section class="slide light">
+  <div class="meta"><span><b>04</b> — Versiones</span><span>Blessed Barber Shop · Identidad</span></div>
+  <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:20px;height:100%;padding:44px 0 0">
+    <div style="grid-row:1/3;background:var(--negro);border-radius:22px;display:grid;place-items:center;color:var(--luz);position:relative">
+      <div style="display:grid;justify-items:center;gap:30px">
+        <svg class="mono glow" width="120" height="139"><use href="#m"/></svg>
+        <div style="text-align:center"><div class="word" style="font-size:64px;margin-right:-.32em">BLESSED</div><div class="sub" style="font-size:14px;color:var(--humo);margin-top:16px;margin-right:-.5em">Barber Shop</div></div>
+      </div>
+      <span class="label" style="position:absolute;left:26px;bottom:22px">Vertical · principal</span>
+    </div>
+    <div style="grid-column:2/4;background:#fff;border:1px solid rgba(12,12,12,.1);border-radius:22px;display:grid;place-items:center;position:relative;color:var(--negro)">
+      <div class="lockup" style="gap:24px"><svg class="mono" width="74" height="86"><use href="#m"/></svg><div class="txt" style="gap:12px"><span class="word" style="font-size:50px">BLESSED</span><span class="sub" style="font-size:12px;color:#77736d">Barber Shop</span></div></div>
+      <span class="label" style="position:absolute;left:26px;bottom:22px">Horizontal · fondos claros</span>
+    </div>
+    <div style="background:var(--madera);border-radius:22px;display:grid;place-items:center;position:relative;color:var(--negro)">
+      <svg class="mono" width="110" height="127"><use href="#m"/></svg>
+      <span class="label" style="position:absolute;left:26px;bottom:22px;color:rgba(12,12,12,.6)">Monograma</span>
+    </div>
+    <div style="border-radius:22px;overflow:hidden;position:relative;display:grid;place-items:center;color:var(--luz)">
+      <img src="img/local.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.45) grayscale(.3)" alt="" />
+      <svg class="mono glow" width="110" height="127" style="position:relative"><use href="#m"/></svg>
+      <span class="label" style="position:absolute;left:26px;bottom:22px;color:rgba(255,255,255,.7)">Sobre foto</span>
+    </div>
+  </div>
+</section>
+
+<!-- 06 USO -->
+<section class="slide">
+  <div class="meta"><span><b>05</b> — Uso correcto</span><span>Blessed Barber Shop · Identidad</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1.25fr;gap:80px;height:100%;align-items:center">
+    <div style="display:grid;gap:40px">
+      <h2 style="font-size:64px">Que respire.</h2>
+      <div class="card" style="padding:56px;display:grid;place-items:center;position:relative">
+        <div style="position:relative;padding:40px;border:1px dashed rgba(192,122,67,.7)">
+          <svg class="mono" width="110" height="127" style="color:var(--luz)"><use href="#m"/></svg>
+          <span style="position:absolute;top:8px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--madera)">x</span>
+          <span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--madera)">x</span>
+        </div>
+      </div>
+      <p class="small">Margen mínimo alrededor del logo: <b style="color:var(--luz)">x</b> = el ancho de la B. Tamaño mínimo del monograma: 16 px en pantalla, 8 mm impreso.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+      <div class="card" style="height:250px;display:grid;place-items:center;position:relative"><svg class="mono" width="160" height="90" preserveAspectRatio="none" viewBox="0 0 100 115.47" style="color:var(--luz)"><use href="#m"/></svg><span class="small" style="position:absolute;left:22px;bottom:16px">✕ No deformar</span></div>
+      <div class="card" style="height:250px;display:grid;place-items:center;position:relative"><svg class="mono" width="90" height="104" style="color:#3fa9f5"><use href="#m"/></svg><span class="small" style="position:absolute;left:22px;bottom:16px">✕ No cambiar colores</span></div>
+      <div class="card" style="height:250px;display:grid;place-items:center;position:relative"><svg class="mono" width="90" height="104" style="color:var(--luz);transform:rotate(18deg)"><use href="#m"/></svg><span class="small" style="position:absolute;left:22px;bottom:16px">✕ No rotar</span></div>
+      <div class="card" style="height:250px;display:grid;place-items:center;position:relative;background:repeating-linear-gradient(45deg,#c07a43 0 14px,#fbf8f1 14px 28px)"><svg class="mono" width="90" height="104" style="color:var(--luz)"><use href="#m"/></svg><span class="small" style="position:absolute;left:22px;bottom:16px;color:var(--negro);background:var(--luz);padding:2px 8px;border-radius:6px">✕ No sobre fondos cargados</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 COLOR -->
+<section class="slide">
+  <div class="meta"><span><b>06</b> — Color</span><span>Blessed Barber Shop · Identidad</span></div>
+  <div style="display:grid;gap:40px;height:100%;align-content:center;padding-top:20px">
+    <h2 style="font-size:64px">Sacados del <em>local.</em></h2>
+    <div style="display:grid;grid-template-columns:2fr 1.4fr 1fr .8fr .8fr;gap:16px;height:440px">
+      <div style="background:var(--negro);border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px"><b style="font-size:26px;font-weight:500">Negro Carbón</b><span class="small">#0C0C0C · RGB 12 12 12</span><span class="small">Paredes y sillones. Base de todo.</span></div>
+      <div style="background:var(--luz);color:var(--negro);border-radius:22px;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px"><b style="font-size:26px;font-weight:500">Luz LED</b><span style="font-size:15px;color:#6d6a65">#FBF8F1 · RGB 251 248 241</span><span style="font-size:15px;color:#6d6a65">El panal del techo.</span></div>
+      <div style="background:var(--madera);color:var(--negro);border-radius:22px;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px"><b style="font-size:26px;font-weight:500">Madera</b><span style="font-size:15px;color:rgba(12,12,12,.65)">#C07A43 · RGB 192 122 67</span><span style="font-size:15px;color:rgba(12,12,12,.65)">El piso. Acentos.</span></div>
+      <div style="background:var(--grafito);border-radius:22px;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px"><b style="font-size:22px;font-weight:500">Grafito</b><span class="small">#1F1F1F</span></div>
+      <div style="background:var(--humo);color:var(--negro);border-radius:22px;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px"><b style="font-size:22px;font-weight:500">Humo</b><span style="font-size:15px;color:rgba(12,12,12,.65)">#8D8A85</span></div>
+    </div>
+    <div>
+      <div style="display:flex;height:14px;border-radius:99px;overflow:hidden;border:1px solid var(--line)">
+        <span style="flex:60;background:var(--negro)"></span><span style="flex:25;background:var(--luz)"></span><span style="flex:8;background:var(--madera)"></span><span style="flex:4;background:var(--grafito)"></span><span style="flex:3;background:var(--humo)"></span>
+      </div>
+      <p class="small" style="margin-top:14px">Proporción de uso: 60% negro · 25% luz · 8% madera · resto para textos secundarios y fondos. La madera es el acento: se usa poco para que siempre destaque.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 08 TIPOGRAFÍA -->
+<section class="slide light">
+  <div class="meta"><span><b>07</b> — Tipografía</span><span>Blessed Barber Shop · Identidad</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;height:100%;padding-top:44px">
+    <div style="background:#fff;border:1px solid rgba(12,12,12,.1);border-radius:22px;padding:48px;display:flex;flex-direction:column;justify-content:space-between">
+      <div class="label">Principal · títulos, textos, interfaz</div>
+      <div style="font-size:200px;font-weight:600;letter-spacing:-.05em;line-height:.8">Aa</div>
+      <div>
+        <div style="font-size:44px;font-weight:600;letter-spacing:-.03em">Space Grotesk</div>
+        <p style="font-size:20px;color:#6d6a65;margin-top:10px">Geométrica y técnica, con rasgos propios. Moderna sin ser fría.</p>
+        <p style="font-size:24px;margin-top:22px;letter-spacing:.02em">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br />abcdefghijklmnñopqrstuvwxyz 0123456789</p>
+      </div>
+    </div>
+    <div style="background:var(--negro);color:var(--luz);border-radius:22px;padding:48px;display:flex;flex-direction:column;justify-content:space-between">
+      <div class="label">Acento · una o dos palabras, nunca párrafos</div>
+      <div style="font-family:var(--serif);font-style:italic;font-size:220px;line-height:.8;color:var(--madera)">Aa</div>
+      <div>
+        <div style="font-family:var(--serif);font-style:italic;font-size:52px">Instrument Serif Italic</div>
+        <p style="font-size:20px;color:var(--humo);margin-top:10px">El toque de oficio y calidez. Se combina así:</p>
+        <p style="font-size:46px;font-weight:500;letter-spacing:-.03em;margin-top:22px">Cortes a la <em style="color:var(--madera)">medida</em> de vos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 SISTEMA GRÁFICO -->
+<section class="slide">
+  <div class="meta"><span><b>08</b> — Sistema gráfico</span><span>Blessed Barber Shop · Identidad</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;height:100%;padding-top:44px">
+    <div class="card" style="position:relative;overflow:hidden;padding:32px;display:flex;flex-direction:column;justify-content:flex-end">
+      <svg class="honey" data-p="l" style="opacity:.35;filter:drop-shadow(0 0 6px rgba(251,248,241,.6));mask-image:linear-gradient(#000 30%,transparent 80%);-webkit-mask-image:linear-gradient(#000 30%,transparent 80%)"><rect width="100%" height="100%" fill="url(#hp)"/></svg>
+      <div style="position:relative"><b style="font-size:26px;font-weight:500">El panal</b><p class="small" style="margin-top:8px">Trama de fondo en posteos, web y packaging. Siempre sutil, con fundido, como luz que se apaga.</p></div>
+    </div>
+    <div class="card" style="padding:32px;display:flex;flex-direction:column;justify-content:space-between">
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:20px">
+        <span style="display:grid;place-items:center;width:64px;aspect-ratio:1/1.1547;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--luz);color:var(--negro);font-weight:600;font-size:22px">1</span>
+        <span style="display:grid;place-items:center;width:64px;aspect-ratio:1/1.1547;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--madera);color:var(--negro);font-weight:600;font-size:22px">2</span>
+        <span style="display:grid;place-items:center;width:64px;aspect-ratio:1/1.1547;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:#2a2a2a;font-weight:600;font-size:22px">3</span>
+        <span style="display:grid;place-items:center;width:64px;aspect-ratio:1/1.1547;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:#2a2a2a;font-size:24px">✂</span>
+        <span style="display:grid;place-items:center;width:64px;aspect-ratio:1/1.1547;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:#2a2a2a;font-size:24px">★</span>
+      </div>
+      <div><b style="font-size:26px;font-weight:500">Hexágonos-contenedor</b><p class="small" style="margin-top:8px">Para numerar pasos, íconos, precios destacados y stickers de historias.</p></div>
+    </div>
+    <div class="card" style="padding:32px;display:flex;flex-direction:column;justify-content:space-between">
+      <div style="background:var(--luz);color:var(--negro);border-radius:16px;padding:20px 22px;position:relative;margin-top:10px">
+        <div style="font-size:12px;letter-spacing:.2em;font-weight:600">TU TURNO</div>
+        <div style="display:flex;justify-content:space-between;margin-top:12px;font-size:16px"><span style="color:#77736d">Corte + barba</span><b style="font-weight:500">Sáb 17 · 14:00</b></div>
+        <div style="height:1px;margin:16px -22px;background-image:linear-gradient(90deg,rgba(12,12,12,.3) 50%,transparent 50%);background-size:10px 1px;position:relative"></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:15px">Total</span><b style="font-size:30px;font-weight:600;letter-spacing:-.03em">$16.000</b></div>
+      </div>
+      <div><b style="font-size:26px;font-weight:500">El ticket</b><p class="small" style="margin-top:8px">Formato para turnos, promos y gift cards. Corte troquelado: guiño a lo físico.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 VOZ -->
+<section class="slide wood">
+  <div class="meta" style="color:rgba(12,12,12,.55)"><span><b style="color:var(--negro)">09</b> — Voz y tono</span><span>Blessed Barber Shop · Identidad</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:80px;height:100%;align-items:center">
+    <div style="display:grid;gap:28px">
+      <h2 style="font-size:84px">Hablamos como<br />en el <em style="color:var(--luz)">sillón.</em></h2>
+      <p class="lead" style="color:rgba(12,12,12,.75)">De vos, directo y con buena onda. Seguros de lo que hacemos, sin agrandarnos. Frases cortas. Un emoji cuando suma, no tres.</p>
+    </div>
+    <div style="display:grid;gap:14px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:14px;letter-spacing:.2em;text-transform:uppercase;font-weight:600"><span>Así sí</span><span style="opacity:.55">Así no</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div style="background:var(--negro);color:var(--luz);border-radius:16px;padding:22px;font-size:20px">“Reservá en un minuto. Te esperamos.”</div>
+        <div style="border:1px solid rgba(12,12,12,.3);border-radius:16px;padding:22px;font-size:20px;opacity:.7">“Estimado cliente, solicite su turno mediante el formulario.”</div>
+        <div style="background:var(--negro);color:var(--luz);border-radius:16px;padding:22px;font-size:20px">“Hoy quedan dos lugares a la tarde 💈”</div>
+        <div style="border:1px solid rgba(12,12,12,.3);border-radius:16px;padding:22px;font-size:20px;opacity:.7">“¡¡¡ÚLTIMOS TURNOS!!! 🔥🔥🔥 NO TE LO PIERDAS”</div>
+        <div style="background:var(--negro);color:var(--luz);border-radius:16px;padding:22px;font-size:20px">“Gracias por venir, Santi. Cuando quieras renovar, acá estamos.”</div>
+        <div style="border:1px solid rgba(12,12,12,.3);border-radius:16px;padding:22px;font-size:20px;opacity:.7">“Agradecemos su visita y su valoración positiva.”</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 PAPELERÍA -->
+<section class="slide" style="background:#151515">
+  <div class="meta"><span><b>10</b> — Aplicaciones · papelería</span><span>Blessed Barber Shop · Identidad</span></div>
+  <div style="position:relative;height:100%">
+    <!-- tarjeta frente -->
+    <div style="position:absolute;left:40px;top:120px;width:510px;height:300px;border-radius:14px;background:var(--negro);box-shadow:0 30px 60px rgba(0,0,0,.6);transform:rotate(-6deg);display:grid;place-items:center;overflow:hidden">
+      <svg class="honey" data-p="l" style="opacity:.07"><rect width="100%" height="100%" fill="url(#hp)"/></svg>
+      <svg class="mono glow" width="90" height="104" style="color:var(--luz);position:relative"><use href="#m"/></svg>
+    </div>
+    <!-- tarjeta dorso -->
+    <div style="position:absolute;left:300px;top:400px;width:510px;height:300px;border-radius:14px;background:var(--luz);color:var(--negro);box-shadow:0 30px 60px rgba(0,0,0,.6);transform:rotate(4deg);padding:34px 36px;display:flex;flex-direction:column;justify-content:space-between">
+      <div class="lockup" style="gap:14px"><svg class="mono" width="34" height="39"><use href="#m"/></svg><div class="txt" style="gap:6px"><span class="word" style="font-size:22px">BLESSED</span><span class="sub" style="font-size:8px;color:#77736d">Barber Shop</span></div></div>
+      <div style="font-size:15px;line-height:1.6"><b style="font-weight:600">Lavalle 575 · CABA</b><br />011 2356-3376<br /><span style="color:#77736d">Lun a Sáb · 10 a 20:30 hs</span></div>
+      <div style="position:absolute;right:36px;bottom:34px;font-family:var(--serif);font-style:italic;font-size:30px;color:var(--madera)">Salí bendecido.</div>
+    </div>
+    <!-- gift card -->
+    <div style="position:absolute;right:60px;top:110px;width:560px;height:330px;border-radius:18px;background:var(--madera);color:var(--negro);box-shadow:0 30px 60px rgba(0,0,0,.6);transform:rotate(3deg);padding:34px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden">
+      <svg class="honey" data-p="d" style="opacity:.1"><rect width="100%" height="100%" fill="url(#hpd)"/></svg>
+      <div style="position:relative;display:flex;justify-content:space-between"><span style="font-size:13px;letter-spacing:.24em;font-weight:600">GIFT CARD</span><svg class="mono" width="40" height="46"><use href="#m"/></svg></div>
+      <div style="position:relative"><div style="font-size:64px;font-weight:600;letter-spacing:-.04em;line-height:1">Corte + barba</div><div style="font-family:var(--serif);font-style:italic;font-size:30px;margin-top:6px">Regalale un sillón.</div></div>
+    </div>
+    <!-- ticket turno -->
+    <div style="position:absolute;right:120px;top:500px;width:430px;border-radius:16px;background:var(--luz);color:var(--negro);box-shadow:0 30px 60px rgba(0,0,0,.6);transform:rotate(-3deg);padding:26px 28px">
+      <div style="display:flex;align-items:center;gap:10px"><svg class="mono" width="18" height="21"><use href="#m"/></svg><span style="font-size:12px;letter-spacing:.2em;font-weight:600">TARJETA DE TURNO</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;font-size:15px"><span style="color:#77736d">Próximo turno</span><b style="font-weight:500;text-align:right">Sáb 17 · 14:00</b><span style="color:#77736d">Barbero</span><b style="font-weight:500;text-align:right">—</b></div>
+      <div style="height:1px;margin:18px -28px;background-image:linear-gradient(90deg,rgba(12,12,12,.3) 50%,transparent 50%);background-size:10px 1px"></div>
+      <div style="display:flex;gap:8px">
+        <span style="width:30px;aspect-ratio:1/1.1547;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--negro)"></span><span style="width:30px;aspect-ratio:1/1.1547;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--negro)"></span><span style="width:30px;aspect-ratio:1/1.1547;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:var(--negro)"></span><span style="width:30px;aspect-ratio:1/1.1547;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:rgba(12,12,12,.15)"></span><span style="width:30px;aspect-ratio:1/1.1547;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);background:rgba(12,12,12,.15)"></span>
+        <span style="font-size:13px;color:#77736d;margin-left:8px;align-self:center">5 cortes = 1 de regalo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 REDES -->
+<section class="slide light">
+  <div class="meta"><span><b>11</b> — Aplicaciones · redes</span><span>Blessed Barber Shop · Identidad</span></div>
+  <div style="display:flex;gap:28px;height:100%;align-items:center;justify-content:center;padding-top:20px">
+    <!-- post 1 -->
+    <div style="width:470px;height:470px;border-radius:10px;overflow:hidden;position:relative;color:var(--luz);box-shadow:0 20px 50px rgba(0,0,0,.18)">
+      <img src="img/local.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%" alt="" />
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(12,12,12,.95) 15%,rgba(12,12,12,.1) 65%)"></div>
+      <div style="position:absolute;left:30px;right:30px;bottom:28px">
+        <div style="font-size:52px;font-weight:500;letter-spacing:-.04em;line-height:.95">Turnos <em style="color:var(--madera)">online.</em></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:15px"><span>Reservá en 1 minuto · link en bio</span><svg class="mono" width="26" height="30"><use href="#m"/></svg></div>
+      </div>
+    </div>
+    <!-- post 2 -->
+    <div style="width:470px;height:470px;border-radius:10px;overflow:hidden;position:relative;background:var(--negro);color:var(--luz);padding:40px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 20px 50px rgba(0,0,0,.18)">
+      <svg class="honey" data-p="l" style="opacity:.07"><rect width="100%" height="100%" fill="url(#hp)"/></svg>
+      <div style="position:relative;color:var(--madera);letter-spacing:4px">★★★★★</div>
+      <div style="position:relative;font-family:var(--serif);font-size:50px;line-height:1.05">“Te cambian el aura <em style="color:var(--madera)">totalmente.</em>”</div>
+      <div style="position:relative;display:flex;justify-content:space-between;align-items:center;font-size:15px;color:var(--humo)"><span>Viviana · Google</span><svg class="mono" width="26" height="30" style="color:var(--luz)"><use href="#m"/></svg></div>
+    </div>
+    <!-- story -->
+    <div style="width:300px;height:533px;border-radius:22px;overflow:hidden;position:relative;background:var(--negro);color:var(--luz);padding:26px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 20px 50px rgba(0,0,0,.25)">
+      <svg class="honey" data-p="l" style="opacity:.18;filter:drop-shadow(0 0 4px rgba(251,248,241,.5));mask-image:linear-gradient(#000,transparent 35%);-webkit-mask-image:linear-gradient(#000,transparent 35%)"><rect width="100%" height="100%" fill="url(#hp)"/></svg>
+      <div style="position:relative;height:3px;background:rgba(255,255,255,.3);border-radius:3px"><span style="display:block;width:40%;height:100%;background:#fff;border-radius:3px"></span></div>
+      <div style="position:relative">
+        <div class="label" style="font-size:11px">Hoy · sábado</div>
+        <div style="font-size:42px;font-weight:500;letter-spacing:-.04em;line-height:.95;margin-top:10px">Quedan <em style="color:var(--madera)">2</em> lugares.</div>
+        <div style="display:flex;gap:8px;margin-top:18px"><span class="tag" style="border-color:rgba(255,255,255,.3)">16:00</span><span class="tag" style="border-color:rgba(255,255,255,.3)">17:30</span></div>
+        <div style="margin-top:22px;background:var(--luz);color:var(--negro);border-radius:99px;padding:12px;text-align:center;font-weight:600;font-size:15px">Reservá ↗</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 ESPACIO Y WEB -->
+<section class="slide">
+  <div class="meta"><span><b>12</b> — Aplicaciones · local y web</span><span>Blessed Barber Shop · Identidad</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1.25fr;gap:28px;height:100%;padding-top:44px">
+    <!-- vidriera -->
+    <div style="border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(160deg,#1a1d1f,#0a0b0c 60%);border:1px solid var(--line);display:grid;place-items:center">
+      <div style="position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.05) 38%,transparent 46%)"></div>
+      <div style="position:relative;display:grid;justify-items:center;gap:26px;text-align:center">
+        <svg class="mono" width="160" height="185" style="color:#fff;filter:drop-shadow(0 0 10px #fff) drop-shadow(0 0 30px rgba(251,248,241,.8)) drop-shadow(0 0 60px rgba(251,248,241,.4))"><use href="#m"/></svg>
+        <div class="word" style="font-size:40px;margin-right:-.32em;text-shadow:0 0 18px rgba(255,255,255,.6)">BLESSED</div>
+        <div style="font-size:14px;letter-spacing:.3em;color:rgba(251,248,241,.6);margin-right:-.3em">LUN — SÁB · 10 — 20:30</div>
+      </div>
+      <span class="label" style="position:absolute;left:26px;bottom:22px">Vidriera · neón LED + vinilo</span>
+    </div>
+    <!-- web -->
+    <div style="display:grid;grid-template-rows:auto 1fr;gap:14px">
+      <div style="border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#1a1a1a">
+        <div style="display:flex;gap:7px;padding:12px 14px;align-items:center"><span style="width:11px;height:11px;border-radius:50%;background:#3a3a3a"></span><span style="width:11px;height:11px;border-radius:50%;background:#3a3a3a"></span><span style="width:11px;height:11px;border-radius:50%;background:#3a3a3a"></span><span style="margin-left:14px;font-size:12px;color:var(--humo);background:#0f0f0f;padding:4px 14px;border-radius:99px">blessedbarbershop.com.ar</span></div>
+        <img src="img/web.png" style="display:block;width:100%" alt="" />
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:end">
+        <div><b style="font-size:26px;font-weight:500">Web con turnos online</b><p class="small" style="margin-top:6px">La identidad aplicada: ya está diseñada y funcionando como muestra.</p></div>
+        <span class="tag" style="color:var(--madera);border-color:rgba(192,122,67,.5)">Lista</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 CIERRE -->
+<section class="slide light">
+  <svg class="honey" data-p="d" style="opacity:.07;mask-image:radial-gradient(circle at 85% 30%,#000,transparent 50%);-webkit-mask-image:radial-gradient(circle at 85% 30%,#000,transparent 50%)"><rect width="100%" height="100%" fill="url(#hpd)"/></svg>
+  <div class="meta"><span><b>13</b> — Qué incluye</span><span>Blessed Barber Shop · Identidad</span></div>
+  <div style="position:relative;display:grid;grid-template-columns:1fr 1fr;gap:80px;height:100%;align-items:center">
+    <div style="display:grid;gap:32px">
+      <h2 style="font-size:96px">Una marca,<br /><em>todo</em> el local.</h2>
+      <p class="lead">Todo habla el mismo idioma: lo que el cliente ve en Instagram es lo que encuentra en la web y lo que siente al sentarse.</p>
+    </div>
+    <div style="display:grid;gap:12px;font-size:21px">
+      <div style="display:flex;gap:18px;padding:18px 0;border-bottom:1px solid rgba(12,12,12,.12)"><span style="color:var(--madera);font-weight:600">01</span>Logo, monograma y versiones (archivos para imprimir y digital)</div>
+      <div style="display:flex;gap:18px;padding:18px 0;border-bottom:1px solid rgba(12,12,12,.12)"><span style="color:var(--madera);font-weight:600">02</span>Paleta, tipografías y manual de uso</div>
+      <div style="display:flex;gap:18px;padding:18px 0;border-bottom:1px solid rgba(12,12,12,.12)"><span style="color:var(--madera);font-weight:600">03</span>Plantillas de Instagram: posteos, historias y destacadas</div>
+      <div style="display:flex;gap:18px;padding:18px 0;border-bottom:1px solid rgba(12,12,12,.12)"><span style="color:var(--madera);font-weight:600">04</span>Tarjetas, gift card y tarjeta de fidelidad</div>
+      <div style="display:flex;gap:18px;padding:18px 0;border-bottom:1px solid rgba(12,12,12,.12)"><span style="color:var(--madera);font-weight:600">05</span>Diseño de vidriera y cartelería</div>
+      <div style="display:flex;gap:18px;padding:18px 0"><span style="color:var(--madera);font-weight:600">06</span>Web con reserva de turnos online</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
